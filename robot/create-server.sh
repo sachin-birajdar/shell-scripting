@@ -19,8 +19,8 @@ createServer() {
 
     sed -e "s/IPADDRESS/${PRIVATE_IP}/" -e "s/COMPONENT/$COMPONENT/" route53.json > /tmp/dns.json 
 
-    echo -n "Creating the DNS Record ********"
-    aws route53 change-resource-record-sets --hosted-zone-id $ZONE_ID --change-batch file:///tmp/dns.json | jq 
+    #echo -n "Creating the DNS Record ********"
+   # aws route53 change-resource-record-sets --hosted-zone-id $ZONE_ID --change-batch file:///tmp/dns.json | jq 
 }
 
 if [ "$1" == "all" ]; then 
